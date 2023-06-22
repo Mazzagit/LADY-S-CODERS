@@ -1,3 +1,51 @@
+<?php
+// Connexion à la base de données
+$servername = "YOUTHCONNEKTPASS";
+$username = "votre_nom_utilisateur";
+$password = "votre_mot_de_passe";
+$dbname = "nom_de_votre_base_de_données";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de la connexion
+if ($conn->connect_error) {
+    die("Erreur de connexion à la base de données : " . $conn->connect_error);
+}
+
+// Traitement du formulaire de connexion
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["Email"];
+    $password = $_POST["Mot_de_passe"];
+
+    // Vérification si l'utilisateur existe déjà dans la base de données
+    $sql = "SELECT * FROM utilisateurs WHERE Email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Utilisateur existe déjà, vérification du mot de passe
+        $row = $result->fetch_assoc();
+        if ($password == $row["MotDePasse"]) {
+            // Mot de passe valide, création de la session et redirection vers la page d'accueil
+            session_start();
+            $_SESSION["utilisateur_id"] = $row["ID"];
+            header("Location: accueil.php");
+            exit();
+        } else {
+            // Mot de passe incorrect, affichage d'un message d'erreur
+            $erreur_message = "Mot de passe incorrect";
+        }
+    } else {
+        // Utilisateur n'existe pas, affichage d'un message d'erreur
+        $erreur_message = "Utilisateur non trouvé";
+    }
+}
+
+$conn->close();
+?>
+
+<!-- Votre code HTML existant pour le formulaire de connexion -->
+<!-- Ajoutez la variable $erreur_message pour afficher les messages d'erreur si nécessaire -->
+
 <!DOCTYPE html>
 <html lang="en">
 
