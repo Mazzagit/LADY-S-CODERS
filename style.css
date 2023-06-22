@@ -1,0 +1,38 @@
+.j{
+    border-radius: 0%;  
+    background-color: #f8f9fa;
+width: 100%;
+height: auto;
+
+}
+.h1{text-align: center;
+    border-radius: 50%;
+    background-color: rgb(62, 175, 62); 
+
+}
+.card-body{
+    border-radius: 0%; 
+    background-color:  #f8f9fa;   
+}
+
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .background{background-color: #f8f9fa;
+
+  }
+  .h{ border-radius: 50%;
+    background-color: rgb(62, 175, 62); 
+
+
+  }
+
+
+
+  
+
+  
