@@ -137,6 +137,54 @@ height: auto;
   </style>
   <title>YOUTHCONNEKT_BURKINA-FASO</title>
 </head>
+<?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "votre_mot_de_passe";
+$dbname = "Youthconnektpass";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+// Vérification de la connexion
+
+    die("Erreur de connexion à la base de données : " . $conn->connect_error);
+}
+
+// Traitement du formulaire de connexion
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["Email"];
+    $password = $_POST["Mot_de_passe"];
+
+    // Vérification si l'utilisateur existe déjà dans la base de données
+    $sql = "SELECT * FROM utilisateurs WHERE Email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Utilisateur existe déjà, vérification du mot de passe
+        $row = $result->fetch_assoc();
+        if ($password == $row["MotDePasse"]) {
+            // Mot de passe valide, création de la session et redirection vers la page d'accueil
+            session_start();
+            $_SESSION["utilisateur_id"] = $row["ID"];
+            header("Location: accueil.php");
+            exit();
+        } else {
+            // Mot de passe incorrect, affichage d'un message d'erreur
+            $erreur_message = "Mot de passe incorrect";
+        }
+    } else {
+        // Utilisateur n'existe pas, affichage d'un message d'erreur
+        $erreur_message = "Utilisateur non trouvé";
+    }
+}
+
+$conn->close();
+?>
+
+<!-- Votre code HTML existant pour le formulaire de connexion -->
+<!-- Ajoutez la variable $erreur_message pour afficher les messages d'erreur si nécessaire -->
 
 <body>
   <header>
@@ -216,6 +264,9 @@ height: auto;
     }
   });
 </script>
+<li class="nav-item">
+                        <a class="nav-link active ms-3 text-black" aria-current="page" href="index.php"> <button>Retour</button> </a>
+                    </li>
                   </ul>
             </div>
         </div>
