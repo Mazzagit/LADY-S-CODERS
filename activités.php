@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOUTH OPPORTUNITY</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    
     <style>
         .navbar-vertical {
             height: 120vh;
@@ -60,7 +59,7 @@
                     </div>
                 </div>
                 <div class="col-md-10 p-3">
-                    <img src="./images/arrière plan.jpg" alt="" width="100%" height="auto">
+                    <img src="images\group-five-african-college-students-spending-time-together-campus-university-yard-black-afro-friends-sitting-grass-studying-with-laptops.jpg" alt="" width="100%" height="auto">
 
 
                     <div class="row mt-5">

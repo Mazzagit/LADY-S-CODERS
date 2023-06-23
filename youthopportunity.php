@@ -143,7 +143,7 @@
 
                         </div>
                         <div class="col-md-3">
-                            <img src="./images/b3.jpg" alt="" class="rounded" width="100%" height="80%">
+                            <img src="images\study-group-african-people (1) (1).jpg" alt="" class="rounded" width="100%" height="80%">
                             <a class="nav-link" href="https://spong.bf/#" style="text-align: center;color: black;">Recrutemment de 20
                                 volontaires à Ouagadougou</a>
 
