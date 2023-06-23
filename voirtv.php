@@ -47,8 +47,12 @@
 
             </div>
             <li class="nav-item">
-                        <a class="nav-link active ms-3 text-black" aria-current="page" href="index.php"> <button>Retour</button> </a>
-                    </li>
+    <a class="nav-link active ms-3 text-black" aria-current="page" href="index.php">
+        <button class="btn btn-white rounded-circle">Retour</button>
+    </a>
+</li>
+
+
         </nav>
 
         <div class="container-fluid">

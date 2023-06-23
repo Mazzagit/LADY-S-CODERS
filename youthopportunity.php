@@ -38,6 +38,12 @@
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 text-light fs-3 fw-bold">YOUTH</br> OPPORTUNITY</span>
             </div>
+            <li class="nav-item">
+    <a class="nav-link active ms-3 text-black" aria-current="page" href="index.php">
+        <button class="btn btn-white rounded-circle">Retour</button>
+    </a>
+</li>
+
         </nav>
 
         <div class="container-fluid">
@@ -52,7 +58,7 @@
                             <hr style="width: 150px;">
                             <a class="nav-link active text-success" href="#">International</a><br>
                             <a class="nav-link" href="#">Volontariat</a><br>
-                            <a class="nav-link" href="#">Stage</a><br>
+                            <a class="nav-link" href="activités.php">Activités</a><br>
                             <a class="nav-link" href="#">Certifications</a><br>
                             <hr style="width: 150px;">
                             <a class="nav-link active" href="#">Forum</a><br>
